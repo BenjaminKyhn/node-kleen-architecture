@@ -2,7 +2,7 @@
 module.exports = class DatabaseServices {
 
     constructor() {
-        this.studentRepository = null;
+        this.userRepository = null;
     }
 
     initDatabase() {

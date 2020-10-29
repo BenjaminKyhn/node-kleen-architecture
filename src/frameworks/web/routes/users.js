@@ -1,19 +1,19 @@
 const express = require('express');
-const StudentController = require('../../../controllers/students/StudentController');
+const UserController = require('../../../controllers/students/UserController');
 
 // address - api/students
 // load dependencies
-const studentsRouter = (dependencies) => {
+const usersRouter = (dependencies) => {
     const router = express.Router();
 
     // load controller with dependencies
-    const controller = StudentController(dependencies);
+    const controller = UserController(dependencies);
 
     router.route('/')
-        .get(controller.getAllStudents)
-        .post(controller.addNewStudent);
+        .get(controller.getAllUsers)
+        .post(controller.addNewUser);
     return router;
 };
 
 
-module.exports = studentsRouter;
+module.exports = usersRouter;

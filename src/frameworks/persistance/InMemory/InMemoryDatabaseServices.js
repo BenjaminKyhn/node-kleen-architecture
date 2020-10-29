@@ -1,11 +1,11 @@
 const DatabaseServices = require('../../../application/contracts/DatabaseServices');
-const InMemoryStudentRepository = require('./InMemoryStudentRepository');
-const Student = require('../../../entities/User');
+const InMemoryUserRepository = require('./InMemoryUserRepository');
+const User = require('../../../entities/User');
 
 module.exports = class InMemoryDatabaseServices extends DatabaseServices {
     constructor() {
         super();
-        this.studentRepository = new InMemoryStudentRepository();
+        this.userRepository = new InMemoryUserRepository();
     }
 
     async initDatabase() {
@@ -13,9 +13,9 @@ module.exports = class InMemoryDatabaseServices extends DatabaseServices {
     }
 
     async seedData() {
-        let sampleStudent = new Student('royi', 'benita', 'royibeni@gmail.com');
+        let sampleUser = new User('royi', 'benita', 'royibeni@gmail.com');
 
-        sampleStudent = await this.studentRepository.add(sampleStudent);
+        sampleUser = await this.userRepository.add(sampleUser);
 
     }
 };

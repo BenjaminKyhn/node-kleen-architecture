@@ -1,9 +1,9 @@
-const Student = require('../../entities/User');
+const User = require('../../entities/User');
 
-module.exports = (StudentRepository, CrmServices) => {
+module.exports = (UserRepository, CrmServices) => {
 
     async function Execute(firstName, lastName, email) {
-        const student = await StudentRepository.getByEmail(email);
+        const student = await UserRepository.getByEmail(email);
 
         // validate
         if (!firstName || !lastName || !email) {
@@ -16,15 +16,15 @@ module.exports = (StudentRepository, CrmServices) => {
         }
 
         // create new student object
-        let newStudent = new Student(firstName, lastName, email);
+        let newUser = new User(firstName, lastName, email);
 
         // persist student
-        newStudent = await StudentRepository.add(newStudent);
+        newUser = await UserRepository.add(newUser);
 
         // notify crm system
-        await CrmServices.notify(newStudent);
+        await CrmServices.notify(newUser);
 
-        return 'student added successfully';
+        return 'user added successfully';
     }
     return {
         Execute

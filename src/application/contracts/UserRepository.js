@@ -1,34 +1,30 @@
 /* eslint-disable no-empty-function */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable class-methods-use-this */
-module.exports = class StudentRepository {
+module.exports = class UserRepository {
     constructor() { }
 
-    add(studentInstance) {
+    add(userInstance) {
         return Promise.reject(new Error('not implemented'));
     }
 
-    update(studentInstance) {
+    update(userInstance) {
         return Promise.reject(new Error('not implemented'));
     }
 
-    delete(studentInstance) {
+    delete(userInstance) {
         return Promise.reject(new Error('not implemented'));
     }
 
-    getById(StudentId) {
+    getById(UserId) {
         return Promise.reject(new Error('not implemented'));
     }
 
-    getByEmail(StudentId) {
+    getByEmail(UserId) {
         return Promise.reject(new Error('not implemented'));
     }
 
     getAll() {
-        return Promise.reject(new Error('not implemented'));
-    }
-
-    addEnrollment(studentInstance, enrollment) {
         return Promise.reject(new Error('not implemented'));
     }
 };
