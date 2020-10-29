@@ -7,7 +7,7 @@ module.exports = (dependencies) => {
 
     const addNewUser = (req, res, next) => {
         // init use case
-        const AddUserCommand = AddUser(userRepository, CrmServices);
+        const AddUserCommand = AddUser(userRepository);
         // extract student properties
         const { firstName, lastName, email } = req.body;
         // call use case

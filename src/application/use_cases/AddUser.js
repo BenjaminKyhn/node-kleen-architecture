@@ -1,6 +1,6 @@
 const User = require('../../entities/User');
 
-module.exports = (UserRepository, CrmServices) => {
+module.exports = (UserRepository) => {
 
     async function Execute(firstName, lastName, email) {
         const student = await UserRepository.getByEmail(email);
@@ -20,9 +20,6 @@ module.exports = (UserRepository, CrmServices) => {
 
         // persist student
         newUser = await UserRepository.add(newUser);
-
-        // notify crm system
-        await CrmServices.notify(newUser);
 
         return 'user added successfully';
     }
