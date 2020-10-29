@@ -4,7 +4,6 @@ const GetAllUsers = require('../../application/use_cases/GetAllUsers');
 module.exports = (dependencies) => {
 
     const { userRepository } = dependencies.DatabaseService;
-    const { CrmServices } = dependencies;
 
     const addNewUser = (req, res, next) => {
         // init use case
