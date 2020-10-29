@@ -1,12 +1,12 @@
 const express = require('express');
-const students = require('./users');
+const users = require('./users');
 
 const apiRouter = (dependencies) => {
     const routes = express.Router();
 
-    const studentsRouter = students(dependencies);
+    const usersRouter = users(dependencies);
 
-    routes.use('/users', studentsRouter);
+    routes.use('/users', usersRouter);
     return routes;
 
 };

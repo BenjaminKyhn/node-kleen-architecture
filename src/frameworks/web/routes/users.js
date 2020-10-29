@@ -1,7 +1,7 @@
 const express = require('express');
-const UserController = require('../../../controllers/students/UserController');
+const UserController = require('../../../controllers/users/UserController');
 
-// address - api/students
+// address - /users
 // load dependencies
 const usersRouter = (dependencies) => {
     const router = express.Router();
